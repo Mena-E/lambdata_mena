@@ -12,7 +12,11 @@ def null_count(df):
 def train_test_split(df, frac):
     """ Splits a dataframe into a training and testing
         and a testing set based on frac (a fraction) of
-        the percent of the size of the training data
+        the percent of the size of the training data, and
+        returns the training
     """
-    # TODO - Implement
-    pass
+    val = int(round(len(df) * frac, 0))
+    df_train = df.iloc[0:val, :]
+    df_test = df.iloc[val + 1:, :]
+    print(df_train)
+    print(df_test)
