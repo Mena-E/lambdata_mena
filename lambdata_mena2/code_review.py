@@ -25,7 +25,7 @@ def example_2():
     return {"has_key() is deprecated": True}
 
 
-class Example3(object):
+class Example3:
     def __init__(self, some_string, bar=False):
         self.bar = bar
         self.some_string = some_string
@@ -33,11 +33,9 @@ class Example3(object):
     def my_bar(self):
         if self.bar:
             self.bar += 1
-        else:
             self.bar *= self.bar
-        return self.bar
-
-    def my_string(self):
-        self.some_string = " INDENTATION IN MULTIPLE STRINGS SHOULD NOT BE \n"
-        "TOUCHED only actual code should be re-indented, THIS IS MORE CODE"
-        return sys.path, self.some_string
+            return self.bar
+        else:
+            self.some_string = "INDENTATION IN MULTIPLE STRINGS SHOULD NOT BE" \
+                               "TOUCHED only actual code should be re-indented, THIS IS MORE CODE"
+            return sys.path, self.some_string
